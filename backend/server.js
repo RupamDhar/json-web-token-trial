@@ -12,6 +12,11 @@ app.use(express.json());
 app.use(cors());
 
 
+app.get('/', (req, res)=> {
+    res.send('Server is running...');
+})
+
+
 app.post('/api/signup', async (req, res) => {
     const { username, password } = req.body;
     try {
