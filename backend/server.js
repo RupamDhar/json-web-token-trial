@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get('/', (req, res)=> {
+app.get('/', (req, res) => {
     res.send('Server is running...');
 })
 
@@ -58,7 +58,7 @@ app.get('/api/dashboard', auth, async (req, res) => {
 app.put('/api/savecount', auth, async (req, res) => {
     const id = req.id;
     const counter = req.body.counter;
-    
+
     try {
         const user = await User.findOne({ _id: id });
         if (!user) return res.status(400).json({ error: 'User not found' });
@@ -69,7 +69,7 @@ app.put('/api/savecount', auth, async (req, res) => {
     catch (error) {
         return res.status(400).json({ error: 'Could not update counter' });
     }
-    res.send({ msg: 'Counter Updated Successfully' });  
+    res.send({ msg: 'Counter Updated Successfully' });
 })
 
 
@@ -78,3 +78,6 @@ app.put('/api/savecount', auth, async (req, res) => {
 app.listen(3000, () => {
     console.log('Listening to port 3000')
 });
+
+
+module.exports = { app }
