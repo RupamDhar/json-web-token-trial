@@ -1,9 +1,9 @@
 const express = require('express');
-const User = require('./User');
+const User = require('./utils/User');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { auth } = require('./auth');
+const { auth } = require('./controller/auth');
 require('dotenv').config();
 
 
