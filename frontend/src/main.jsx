@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/hehe",
+    path: "/hihi",
     element: <>hehe</>,
   },
   {
